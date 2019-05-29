@@ -1,19 +1,19 @@
 function indexLetters(str) {
 
-  var chars = str.split(' ').join('');
-
   var result = {};
 
-  for (var i = 0; i < chars.length; i++) {
-    if (result[chars[i]]){
-      result[chars[i]].push(i);
+  for (var i = 0; i < str.length; i++) {
+    if (result[str[i]]){
+      result[str[i]].push(i);
     } else {
-      result[chars[i]] = [i];
+      result[str[i]] = [i];
     }
   }
+
+delete result[' '];
 
 return result;
 
 }
 
-console.log(indexLetters("Lighthouse in the house"));
+console.log(indexLetters("lighthouse in the house"));
